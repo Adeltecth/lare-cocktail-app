@@ -14,26 +14,24 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "JM Cocktails - Lagos Premium Mixology Service",
-  description: "Sip the Joy. Taste the Vibe. Premium cocktail service for events, weddings, and celebrations in Lagos.",
+  description:
+    "Sip the Joy. Taste the Vibe. Premium cocktail service for events, weddings, and celebrations in Lagos.",
   keywords: "cocktails, mixology, events, Lagos, premium drinks",
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
+    icon: "/favicon2.png",
+    shortcut: "/favicon2.png",
+    apple: "/favicon2.png",
+    other: [
+      { rel: "apple-touch-icon", url: "/favicon2.png" },
+      { rel: "icon", url: "/favicon2.png" },
     ],
   },
-  generator: 'v0.app',
-  themeColor: '#E91E63',
+  // themeColor removed from here
 }
 
+// Optional viewport export
 export const viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
@@ -41,12 +39,14 @@ export const viewport = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={poppins.variable}>
       <head>
+        <meta name="theme-color" content="#E91E63" />
+        <link rel="icon" href="/favicon2.png" />
+        <link rel="shortcut icon" href="/favicon2.png" />
+        <link rel="apple-touch-icon" href="/favicon2.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
