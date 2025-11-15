@@ -1,0 +1,20 @@
+/* [next]/internal/font/google/poppins_2411914b.module.css [app-client] (css) */
+@font-face {
+  font-family: Poppins Fallback;
+  src: local(Arial);
+  ascent-override: 93.62%;
+  descent-override: 31.21%;
+  line-gap-override: 8.92%;
+  size-adjust: 112.16%;
+}
+
+.poppins_2411914b-module__MP_JvG__className {
+  font-family: Poppins, Poppins Fallback;
+  font-style: normal;
+}
+
+.poppins_2411914b-module__MP_JvG__variable {
+  --font-sans: "Poppins", "Poppins Fallback";
+}
+
+/*# sourceMappingURL=%5Bnext%5D_internal_font_google_poppins_2411914b_module_css_bad6b30c._.single.css.map*/
