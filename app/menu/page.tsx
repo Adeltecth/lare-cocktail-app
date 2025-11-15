@@ -10,10 +10,9 @@ export default function Menu() {
     { name: "Ocean Bliss", desc: "Blue Curaçao, coconut, lime, soda", src:"/c/c-4.jpg" },
     { name: "Lime Fusion", desc: "Tequila, lime, agave, habanero", src:"/c/c-5.jpg" },
     { name: "Golden Hour", desc: "Whiskey, honey, ginger, lemon", src:"/c/c-6.jpg" },
-        { name: "Golden Hour", desc: "Whiskey, honey, ginger, lemon", src:"/c/c-7.jpg" },
-    { name: "Golden Hour", desc: "Whiskey, honey, ginger, lemon", src:"/c/c-8.jpg" },
-        { name: "Golden Hour", desc: "Whiskey, honey, ginger, lemon", src:"/c/c-9.jpg" },
-
+        { name: "Long Island", desc: "Whiskey, honey, ginger, lemon", src:"/c/c-7.jpg" },
+    { name: "Cosmopolitan", desc: "Whiskey, honey, ginger, lemon", src:"/c/c-8.jpg" },
+        { name: "Tequila Sunrise", desc: "Whiskey, honey, ginger, lemon", src:"/c/c-9.jpg" },
 
   ]
 
@@ -49,8 +48,7 @@ export default function Menu() {
                   <h3 className="font-bold text-lg text-primary mb-1">{cocktail.name}</h3>
                   <p className="text-sm text-muted-foreground mb-3">{cocktail.desc}</p>
                   <div className="flex items-center justify-between">
-                    <span className="font-semibold text-accent text-lg">{cocktail.price}</span>
-                    <button className="px-3 py-1 rounded-lg bg-primary text-white text-sm hover:bg-primary/90 transition-colors">
+                     <button className="px-3 py-1 rounded-lg bg-primary text-white text-sm hover:bg-primary/90 transition-colors">
                       Order
                     </button>
                   </div>

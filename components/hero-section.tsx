@@ -23,12 +23,12 @@ export default function HeroSection() {
         <div className="flex flex-col items-start ">
           {/* Content */}
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}>
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
+            <h1 className="text-xl md:text-6xl font-bold mb-4 leading-tight">
               <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
                 Sip the Joy.
               </span>
               <br />
-              <span className="text-foreground">Taste the Vibe.</span>
+              <span className="text-foreground ">Taste the Vibe.</span>
             </h1>
             <p className="hidden md:block md:text-lg text-white max-w-[400px]  mb-6 leading-relaxed">
               Premium mixology service bringing artisan cocktails to your events, weddings, and celebrations in Lagos.
