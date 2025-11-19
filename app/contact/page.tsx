@@ -4,19 +4,42 @@ import type React from "react"
 
 import { motion } from "framer-motion"
 import { useState } from "react"
-import { Phone, MessageCircle, Instagram } from "lucide-react"
+import { Phone, MessageCircle, Instagram, Loader2, Music } from "lucide-react"
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
+  const [loading, setLoading] = useState(false)
+  const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    alert("Thank you for your message! We will get back to you soon.")
-    setFormData({ name: "", email: "", message: "" })
+    setLoading(true)
+    setStatus(null)
+
+    try {
+      const endpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT || "/api/contact"
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setStatus({ type: "success", message: "Thank you! We'll get back to you soon." })
+        setFormData({ name: "", email: "", message: "" })
+      } else {
+        const error = await response.json()
+        setStatus({ type: "error", message: error.error || "Failed to send message" })
+      }
+    } catch (err) {
+      setStatus({ type: "error", message: "Network error. Please try again." })
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -48,6 +71,7 @@ export default function Contact() {
                 onChange={handleChange}
                 className="w-full px-4 py-3 rounded-lg border-2 border-primary/20 focus:border-primary outline-none transition-colors bg-white"
                 required
+                disabled={loading}
               />
               <input
                 type="email"
@@ -57,6 +81,7 @@ export default function Contact() {
                 onChange={handleChange}
                 className="w-full px-4 py-3 rounded-lg border-2 border-primary/20 focus:border-primary outline-none transition-colors bg-white"
                 required
+                disabled={loading}
               />
               <textarea
                 name="message"
@@ -66,12 +91,26 @@ export default function Contact() {
                 rows={5}
                 className="w-full px-4 py-3 rounded-lg border-2 border-primary/20 focus:border-primary outline-none transition-colors bg-white resize-none"
                 required
+                disabled={loading}
               />
+              {status && (
+                <div
+                  className={`p-4 rounded-lg ${
+                    status.type === "success"
+                      ? "bg-green-100 text-green-800 border border-green-300"
+                      : "bg-red-100 text-red-800 border border-red-300"
+                  }`}
+                >
+                  {status.message}
+                </div>
+              )}
               <button
                 type="submit"
-                className="w-full px-8 py-3 rounded-lg bg-gradient-to-r from-primary to-accent text-white font-semibold hover:shadow-lg transition-all"
+                disabled={loading}
+                className="w-full px-8 py-3 rounded-lg bg-gradient-to-r from-primary to-accent text-white font-semibold hover:shadow-lg transition-all disabled:opacity-50 flex items-center justify-center gap-2"
               >
-                Send Message
+                {loading && <Loader2 size={20} className="animate-spin" />}
+                {loading ? "Sending..." : "Send Message"}
               </button>
             </motion.form>
 
@@ -84,7 +123,13 @@ export default function Contact() {
                   icon: Instagram,
                   title: "Instagram",
                   value: "@jm_cocktails",
-                  link: "https://instagram.com/jm_cocktails",
+                  link: "https://instagram.com/jmcocktails_",
+                },
+                {
+                  icon: Music,
+                  title: "TikTok",
+                  value: "@jm_cocktails",
+                  link: "https://tiktok.com//@adejareolamide42",
                 },
               ].map((contact, i) => {
                 const Icon = contact.icon

@@ -53,11 +53,11 @@ export default function HeroSection() {
       {/* Contact info */}
       <p className="absolute right-0 bottom-0 mt-4 sm:mt-auto text-xs sm:text-sm text-muted-foreground px-4 text-right">
         📱{" "}
-        <a href="tel:08163640024" className="font-semibold text-primary">
+        <a href="tel:08163640024" className="font-semibold text-white">
           08163640024
         </a>{" "}
         •
-        <a href="https://instagram.com/jm_cocktails" className="font-semibold text-primary ml-2">
+        <a href="https://www.instagram.com/jmcocktails_" className="font-semibold text-primary ml-2">
           @jm_cocktails
         </a>
       </p>

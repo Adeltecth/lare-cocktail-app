@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
+import FloatTikTok from "@/components/float-tiktok"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -53,6 +54,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <Navigation />
         {children}
+        <FloatTikTok />
         <Footer />
         <Analytics />
       </body>
