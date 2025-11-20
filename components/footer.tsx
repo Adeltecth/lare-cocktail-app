@@ -6,8 +6,8 @@ import { motion } from "framer-motion"
 
 export default function Footer() {
   const socialLinks = [
-    { icon: Instagram, href: "https://instagram.com/jm_cocktails", label: "Instagram" },
-    { icon: Music, href: "https://tiktok.com/@jm_cocktails", label: "TikTok" },
+    { icon: Instagram, href: "https://instagram.com/jmcocktails_", label: "Instagram" },
+    { icon: Music, href: "https://tiktok.com//@adejareolamide42", label: "TikTok" },
     { icon: Phone, href: "tel:08163640024", label: "Call" },
     { icon: MessageCircle, href: "https://wa.me/2348163640024", label: "WhatsApp" },
   ]
