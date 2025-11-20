@@ -38,13 +38,13 @@ export default function Footer() {
               </p>
               <p>
                 Instagram:{" "}
-                <a href="https://instagram.com/jm_cocktails" className="text-primary hover:underline">
+                <a href="https://instagram.com/jmcocktails_" className="text-primary hover:underline">
                   @jm_cocktails
                 </a>
               </p>
               <p>
                 TikTok:{" "}
-                <a href="https://tiktok.com/@jm_cocktails" className="text-primary hover:underline">
+                <a href="https://tiktok.com//@adejareolamide42" className="text-primary hover:underline">
                   @jm_cocktails
                 </a>
               </p>
